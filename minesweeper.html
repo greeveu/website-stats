@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Minesweeper Statistik - Greev.eu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'>
+    <link rel="stylesheet" href="css/multiGameStats.css">
+    <script src="js/utils.js"></script>
+</head>
+
+<body>
+<div id="leaderboards">
+    <div class="options">
+        <div class="sort">
+            <h2>Difficulty</h2>
+            <form class="tabContents">
+                <div class="tab active" id="select_difficulty">
+                    <input name="filter" id="difficulty_easy" type="radio" value="difficulty_easy"
+                           data-difficulty="EASY"/>
+                    <label for="difficulty_easy">Easy</label>
+                    <input name="filter" id="difficulty_medium" type="radio" value="difficulty_medium"
+                           data-difficulty="MEDIUM"/>
+                    <label for="difficulty_medium">Medium</label>
+                    <input name="filter" id="difficulty_hard" type="radio" value="difficulty_hard"
+                           data-difficulty="HARD"/>
+                    <label for="difficulty_hard">Hard</label>
+                    <input name="filter" id="difficulty_extreme" type="radio" value="difficulty_extreme"
+                           data-difficulty="EXTREME"/>
+                    <label for="difficulty_extreme">Extreme</label>
+                    <input name="filter" id="difficulty_hell" type="radio" value="difficulty_hell"
+                           data-difficulty="HELL"/>
+                    <label for="difficulty_hell">Hell</label>
+                </div>
+            </form>
+        </div>
+        <div class="sort">
+            <h2>Generator</h2>
+            <form class="tabContents">
+                <div class="tab active" id="select_generator">
+                    <input name="filter" id="generator_greev" type="radio" value="generator_greev"
+                           data-generator="GREEV"/>
+                    <label for="generator_greev">Greev</label>
+                    <input name="filter" id="generator_og" type="radio" value="generator_og"
+                           data-generator="OG"/>
+                    <label for="generator_og">Microsoft</label>
+                    <input name="filter" id="generator_noguess" type="radio" value="generator_noguess"
+                           data-generator="NO_GUESSING"/>
+                    <label for="generator_noguess">No 50/50</label>
+                </div>
+            </form>
+        </div>
+        <div class="pagination" id="pagination">
+            <button class="prev" name="pageChange" data-page_change="-1"></button>
+            <span>Page <b id="pageNr">1</b></span>
+            <button class="next" name="pageChange" data-page_change="+1"></button>
+        </div>
+    </div>
+    <ul class="toplist" id="content">
+    </ul>
+</div>
+<p style="color: gray">Impressum & Datenschutz pluoi.com/info</p>
+
+<script src="js/minesweeper.js"></script>
+</body>
+</html>

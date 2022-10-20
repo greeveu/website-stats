@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Islands Statistik - Greev.eu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'>
+  <link rel="stylesheet" href="css/multiGameStats.css">
+</head>
+
+<body>
+  <div id="leaderboards">
+    <div class="options">
+      <div class="sort">
+        <h2>Islands Map</h2>
+        <form class="tabContents">
+          <li class="tab bedwars active">
+            <input checked name="sort" id="cubes" type="radio" value="cubes" onchange="changeMap('CUBES')" />
+            <label for="cubes">Cubes</label>
+            <input name="sort" id="rails" type="radio" value="rails" onchange="changeMap('RAILS')" />
+            <label for="rails">Rails</label>
+            <input name="sort" id="street" type="radio" value="street" onchange="changeMap('STREET')" />
+            <label for="street">Street</label>
+            <input name="sort" id="coral" type="radio" value="coral" onchange="changeMap('CORAL')" />
+            <label for="coral">Coral</label>
+            <input name="sort" id="athen" type="radio" value="athen" onchange="changeMap('ATHEN')" />
+            <label for="athen">Athen</label>
+          </li>
+        </form>
+      </div>
+      <div class="pagination">
+        <button class="prev" onclick="back()"></button>
+        <span id="sideID">Page <b>1</b></span>
+        <button class="next" onclick="next()"></button>
+      </div>
+    </div>
+    <ul class="toplist" id="content">
+    </ul>
+  </div>
+  <script src='./js/jquery.min.js'></script>
+  <script src="js/FastbridgeIslands.js"></script>
+  <script>
+    let page = 0;
+    let map = 'CUBES';
+
+    if (findGetParameter("page") != null) {
+      page = findGetParameter("page");
+    }
+
+    if (findGetParameter("map") != null) {
+      map = findGetParameter("map");
+    }
+
+    document.getElementById("content").innerHTML = '<li style="background: #EAEAEA;"><div class="thumb"><span class="name">Loading...</span></div></li>';
+    load(map, page);
+
+    function next() {
+      page++;
+      document.getElementById("sideID").innerHTML = "Page <b>" + (page + 1) + "</b>";
+      document.getElementById("content").innerHTML = '<li style="background: #EAEAEA;"><div class="thumb"><span class="name">Loading...</span></div></li>';
+      load(map, page);
+      window.scrollTo(0, 0);
+    }
+
+    function back() {
+      if (page === 0) {
+        return;
+      }
+      page--;
+      document.getElementById("sideID").innerHTML = "Page <b>" + (page + 1) + "</b>";
+      document.getElementById("content").innerHTML = '<li style="background: #EAEAEA;"><div class="thumb"><span class="name">Loading...</span></div></li>';
+      load(map, page);
+      window.scrollTo(0, 0);
+    }
+
+    function changeMap(newMap) {
+      document.getElementById("content").innerHTML = '<li style="background: #EAEAEA;"><div class="thumb"><span class="name">Loading...</span></div></li>';
+      load(newMap, page);
+      map = newMap;
+    }
+
+    function load(map, page) {
+      generateFullTable(map, page).then((result) => {
+        document.getElementById("content").innerHTML = result;
+      });
+    }
+  </script>
+  <p style="color: gray">Impressum & Datenschutz pluoi.com/info</p>
+</body>
+
+</html>

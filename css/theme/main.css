@@ -1,0 +1,418 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font: 15px "Arial", sans-serif;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: white !important;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.table td,
+th,
+table {
+  border-color: #145212 !important;
+}
+
+h4 {
+  color: white;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.btn-danger {
+  border: none;
+  border-radius: 0 !important;
+  border-bottom: 5px solid #aa3d37;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.btn-info {
+  border: none;
+  border-radius: 5px !important;
+  border-bottom: 5px solid #337ab7;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.panel {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+}
+
+.well {
+  border: 0;
+  background-color: #689061;
+  border-radius: 10px;
+  border-bottom: 5px solid #3c6941;
+}
+
+.nav {
+  border-top: 0 !important;
+  box-shadow: none;
+}
+
+.navbar {
+  border-top: 0 !important;
+  box-shadow: none;
+  border-radius: 0 !important;
+  font-size: 20px;
+  padding: 10px;
+  background-color: #689061;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 5px solid #3c6941;
+  margin: 0;
+}
+
+.nav li {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.nav li a {
+  color: white !important;
+}
+
+.nav li a:hover {
+  color: #afafaf !important;
+}
+
+/* Top Players */
+.mainpage {
+  box-shadow: 0 0 4px black;
+  margin: 10px;
+  border-radius: 0.45em;
+  width: 300px;
+  white-space: nowrap;
+}
+
+.mainpage:hover {
+  box-shadow: 0 0 20px 0 black;
+}
+
+ul.nav.navbar-nav.navbar-right {
+  margin-top: 7px;
+}
+
+.top-player table td {
+  color: white;
+}
+
+/* Players Stats */
+.players {
+  margin-top: 50px;
+}
+
+.players img {
+  display: block;
+  margin: 0 auto;
+}
+
+.players p {
+  font-size: 15px;
+}
+
+.info {
+  padding-right: 10px;
+}
+
+th {
+  background-color: #508256;
+  text-align: center;
+  width: 80px;
+}
+
+td {
+  background-color: #7a9061;
+  vertical-align: middle !important;
+  text-align: center;
+}
+
+.playername {
+  display: -webkit-inline-box;
+  width: 5em;
+}
+
+.skull {
+  display: inline;
+}
+
+.usernameListe:focus,
+.usernameListe:hover {
+  color: white;
+  font-weight: 700;
+}
+
+p {
+  margin: 2px 5px 7px;
+}
+
+tr {
+  display: table-row;
+}
+
+th:first-of-type {
+  border-top-left-radius: 10px;
+  border-left: none !important;
+}
+
+th:last-of-type {
+  border-top-right-radius: 10px;
+  border-right: none !important;
+}
+
+tr:last-of-type td:first-of-type {
+  border-bottom-left-radius: 10px;
+  border-left: none !important;
+}
+
+tr:last-of-type td:last-of-type {
+  border-bottom-right-radius: 10px;
+  border-right: none !important;
+}
+
+.table-bordered {
+  border: none;
+}
+
+button {
+  border-radius: 9px;
+  padding: 0.5em;
+  width: 6em;
+  border: none;
+  box-shadow: 0 0 3px #353535;
+  background: #5f8a5f;
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.playerUpper {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.playerStatsTitle {
+  margin-top: 0;
+}
+
+.info {
+  font-weight: 100;
+}
+
+.playerSt {
+  font-weight: 700;
+}
+
+.playerTD {
+  background-color: unset;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.mobileNav {
+  display: none;
+}
+
+.row {
+  margin-top: 2rem;
+}
+
+h3 {
+  font-weight: 600;
+  color: #eeeeee;
+  margin-top: 0.1em;
+  margin-bottom: 0.2em;
+}
+
+#playerCard {
+  display: none;
+}
+
+#clanCard {
+  display: none;
+}
+
+@media only screen and (max-width: 767px) {
+  .row {
+    margin-right: unset;
+    margin-left: unset;
+  }
+  .mobileNav {
+    display: unset;
+  }
+  .search-bar {
+    padding-top: unset;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .gameCard {
+    width: 90% !important;
+    height: 7rem !important;
+  }
+  .searchbar {
+    width: 100% !important;
+  }
+  .bottom-left {
+    font-size: 2rem !important;
+  }
+  .row {
+    margin-top: 1rem !important;
+  }
+  #playerCard {
+    width: 90% !important;
+  }
+
+  #clanCard {
+    width: 90% !important;
+  }
+}
+
+@media (min-width: 1515px) {
+  .container {
+    width: 1500px;
+  }
+}
+
+/*@font-face {
+  font-family: "yeet";
+  src: url("assets/Daydream.ttf") format("truetype");
+}*/
+
+.gameCard {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  color: white;
+  margin: 1rem;
+  width: 30rem;
+  height: 10rem;
+  border-radius: 0.45em;
+  overflow: hidden;
+  box-shadow: 0 0 4px black;
+}
+
+.gameCard:hover {
+  box-shadow: 0 0 10px black;
+}
+
+.mainpage {
+  box-shadow: none;
+  margin: 0;
+  border-radius: 0.45em;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  font-family: fantasy, "Arial", sans-serif;
+  font-size: 3rem;
+  text-shadow: 3px 3px 0 #000000;
+  letter-spacing: 1px;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.panel-body,
+.panel-heading,
+.panel-footer {
+  background-color: #526d90 !important;
+  color: white;
+  border-radius: .5em;
+}
+
+a:hover {
+  color: inherit;
+}
+
+figure {
+  width: 100%;
+  height: 100%;
+}
+
+.gameCard figure {
+  position: relative;
+}
+
+.gameCard figure::before {
+  position: absolute;
+  top: 0;
+  left: -75%;
+  z-index: 2;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+  -webkit-transform: skewX(-25deg);
+  transform: skewX(-25deg);
+}
+
+.gameCard figure:hover::before {
+  -webkit-animation: shine 0.75s;
+  animation: shine 0.75s;
+}
+
+@-webkit-keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+
+.gameCard figure img {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  filter: blur(1px);
+}
+
+.gameCard figure:hover img {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+  filter: none;
+}
+
+span.timeInfo {
+  cursor: help;
+}
+
+span.timeInfoVerified {
+  cursor: help;
+}
+
+hr {
+    border-top: 1px solid #565656;
+    width: 50%;
+}

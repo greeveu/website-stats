@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Advent Calendar Statistik - Greev.eu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'>
+  <link rel="stylesheet" href="css/multiGameStats.css">
+</head>
+
+<body>
+  <style type="text/css">
+    .jarImage {
+      display: none;
+      border-radius: 1em;
+      border-top-left-radius: 0em;
+      max-width: 25em;
+      margin-left: 8.5em;
+      margin-top: -1em;
+      position: fixed;
+      z-index: 1;
+      border: solid;
+      border-color: #bbbbbb;
+    }
+  </style>
+  <div id="leaderboards">
+    <div class="options">
+      <div class="sort">
+        <h2 id="sidebarTitel">Advent Calendar</h2>
+        <form class="tabContents">
+          <li class="tab bedwars active">
+            <input name="sort" id="map1" type="radio" value="map1" onchange="changeMap(1)" />
+            <label id="map1Hover" for="map1">Door 1</label>
+            <img id="map1IMG" class="jarImage" src="./images/advent/2019/1.jpg">
+            <input name="sort" id="map2" type="radio" value="map2" onchange="changeMap(2)" />
+            <label id="map2Hover" for="map2">Door 2</label>
+            <img id="map2IMG" class="jarImage" src="./images/advent/2019/2.jpg">
+            <input name="sort" id="map3" type="radio" value="map3" onchange="changeMap(3)" />
+            <label id="map3Hover" for="map3">Door 3</label>
+            <img id="map3IMG" class="jarImage" src="./images/advent/2019/3.jpg">
+            <input name="sort" id="map4" type="radio" value="map4" onchange="changeMap(4)" />
+            <label id="map4Hover" for="map4">Door 4</label>
+            <img id="map4IMG" class="jarImage" src="./images/advent/2019/4.jpg">
+            <input name="sort" id="map5" type="radio" value="map5" onchange="changeMap(5)" />
+            <label id="map5Hover" for="map5">Door 5</label>
+            <img id="map5IMG" class="jarImage" src="./images/advent/2019/5.jpg">
+            <input name="sort" id="map6" type="radio" value="map6" onchange="changeMap(6)" />
+            <label id="map6Hover" for="map6">Door 6</label>
+            <img id="map6IMG" class="jarImage" src="./images/advent/2019/6.jpg">
+            <input name="sort" id="map7" type="radio" value="map7" onchange="changeMap(7)" />
+            <label id="map7Hover" for="map7">Door 7</label>
+            <img id="map7IMG" class="jarImage" src="./images/advent/2019/7.jpg">
+            <input name="sort" id="map8" type="radio" value="map8" onchange="changeMap(8)" />
+            <label id="map8Hover" for="map8">Door 8</label>
+            <img id="map8IMG" class="jarImage" src="./images/advent/2019/8.jpg">
+            <input name="sort" id="map9" type="radio" value="map9" onchange="changeMap(9)" />
+            <label id="map9Hover" for="map9">Door 9</label>
+            <img id="map9IMG" class="jarImage" src="./images/advent/2019/9.jpg">
+            <input name="sort" id="map10" type="radio" value="map10" onchange="changeMap(10)" />
+            <label id="map10Hover" for="map10">Door 10</label>
+            <img id="map10IMG" class="jarImage" src="./images/advent/2019/10.jpg">
+            <input name="sort" id="map11" type="radio" value="map11" onchange="changeMap(11)" />
+            <label id="map11Hover" for="map11">Door 11</label>
+            <img id="map11IMG" class="jarImage" src="./images/advent/2019/11.jpg">
+            <input name="sort" id="map12" type="radio" value="map12" onchange="changeMap(12)" />
+            <label id="map12Hover" for="map12">Door 12</label>
+            <img id="map12IMG" class="jarImage" src="./images/advent/2019/12.jpg">
+            <input name="sort" id="map13" type="radio" value="map13" onchange="changeMap(13)" />
+            <label id="map13Hover" for="map13">Door 13</label>
+            <img id="map13IMG" class="jarImage" src="./images/advent/2019/13.jpg">
+            <input name="sort" id="map14" type="radio" value="map14" onchange="changeMap(14)" />
+            <label id="map14Hover" for="map14">Door 14</label>
+            <img id="map14IMG" class="jarImage" src="./images/advent/2019/14.jpg">
+            <input name="sort" id="map15" type="radio" value="map15" onchange="changeMap(15)" />
+            <label id="map15Hover" for="map15">Door 15</label>
+            <img id="map15IMG" class="jarImage" src="./images/advent/2019/15.jpg">
+            <input name="sort" id="map16" type="radio" value="map16" onchange="changeMap(16)" />
+            <label id="map16Hover" for="map16">Door 16</label>
+            <img id="map16IMG" class="jarImage" src="./images/advent/2019/16.jpg">
+            <input name="sort" id="map17" type="radio" value="map17" onchange="changeMap(17)" />
+            <label id="map17Hover" for="map17">Door 17</label>
+            <img id="map17IMG" class="jarImage" src="./images/advent/2019/17.jpg">
+            <input name="sort" id="map18" type="radio" value="map18" onchange="changeMap(18)" />
+            <label id="map18Hover" for="map18">Door 18</label>
+            <img id="map18IMG" class="jarImage" src="./images/advent/2019/18.jpg">
+            <input name="sort" id="map19" type="radio" value="map19" onchange="changeMap(19)" />
+            <label id="map19Hover" for="map19">Door 19</label>
+            <img id="map19IMG" class="jarImage" src="./images/advent/2019/19.jpg">
+            <input name="sort" id="map20" type="radio" value="map20" onchange="changeMap(20)" />
+            <label id="map20Hover" for="map20">Door 20</label>
+            <img id="map20IMG" class="jarImage" src="./images/advent/2019/20.jpg">
+            <input name="sort" id="map21" type="radio" value="map21" onchange="changeMap(21)" />
+            <label id="map21Hover" for="map21">Door 21</label>
+            <img id="map21IMG" class="jarImage" src="./images/advent/2019/21.jpg">
+            <input name="sort" id="map22" type="radio" value="map22" onchange="changeMap(22)" />
+            <label id="map22Hover" for="map22">Door 22</label>
+            <img id="map22IMG" class="jarImage" src="./images/advent/2019/22.jpg">
+            <input name="sort" id="map23" type="radio" value="map23" onchange="changeMap(23)" />
+            <label id="map23Hover" for="map23">Door 23</label>
+            <img id="map23IMG" class="jarImage" src="./images/advent/2019/23.jpg">
+            <input name="sort" id="map24" type="radio" value="map24" onchange="changeMap(24)" />
+            <label id="map24Hover" for="map24">Door 24</label>
+            <img id="map24IMG" class="jarImage" src="./images/advent/2019/24.jpg">
+
+          </li>
+        </form>
+      </div>
+      <div class="pagination">
+        <button class="prev" onclick="back()"></button>
+        <span id="sideID">Page X</span>
+        <button class="next" onclick="next()"></button>
+      </div>
+    </div>
+    <ul class="toplist" id="content">
+    </ul>
+  </div>
+  <script src='./js/jquery.min.js'></script>
+  <script src="js/Advent.js"></script>
+  <script>
+    var page = findGetParameter('page') ?? 0;
+    var map = findGetParameter('map') ?? 1;
+    var year = findGetParameter("year") ?? 2019;
+
+    document.getElementById("map" + map).checked = true;
+    document.getElementById("sideID").innerHTML = `Page <b>${parseInt(page) + 1}</b>`;
+    document.getElementById("sidebarTitel").innerHTML = `Advent Calendar ${year}`;
+
+    document.getElementById("content").innerHTML = '<li style="background: #EAEAEA;"><div class="thumb"><span class="name">Loading...</span></div></li>';
+    load(year, map, page);
+
+    setImages(year);
+
+    function next() {
+      page++;
+      document.getElementById("sidebarTitel").innerHTML = `Advent Calendar ${year}`;
+      document.getElementById("content").innerHTML = '<li style="background: #EAEAEA;"><div class="thumb"><span class="name">Loading...</span></div></li>';
+      load(year, map, page);
+      window.scrollTo(0, 0);
+      updateURL();
+    }
+
+    function back() {
+      if (page === 0) {
+        return;
+      }
+      page--;
+      document.getElementById("sidebarTitel").innerHTML = `Advent Calendar ${year}`;
+      document.getElementById("content").innerHTML = '<li style="background: #EAEAEA;"><div class="thumb"><span class="name">Loading...</span></div></li>';
+      load(year, map, page);
+      window.scrollTo(0, 0);
+      updateURL();
+    }
+
+    function changeMap(newMap) {
+      page = 0;
+      document.getElementById("content").innerHTML = '<li style="background: #EAEAEA;"><div class="thumb"><span class="name">Loading...</span></div></li>';
+      load(year, newMap, page);
+      map = newMap;
+      updateURL();
+    }
+
+    function updateURL() {
+      history.pushState({'page': page, 'map': map, 'year': year}, document.title, `?year=${year}&map=${map}&page=${page}`);
+      document.getElementById("sideID").innerHTML = `Page <b>${parseInt(page) + 1}</b>`;
+    }
+
+    function load(year, map, page) {
+      generateFullTable(year, map, page).then((result) => {
+        document.getElementById("content").innerHTML = result;
+      });
+    }
+
+    function setImages(year) {
+      for (let i = 1; i <= 24; i++) {
+        if (document.getElementById(`map${i}IMG`).src !== `./images/advent/${year}/${i}.jpg`) {
+          document.getElementById(`map${i}IMG`).src = `./images/advent/${year}/${i}.jpg`;
+        }
+      }
+    }
+  </script>
+  <p style="color: gray">Impressum & Datenschutz pluoi.com/info</p>
+  <style>
+    #leaderboards .options .sort .tabContents {
+      height: 39em;
+    }
+
+    #leaderboards .toplist li .thumb .stat-fails b {
+      display: block;
+      font-size: 20px;
+      margin: 0;
+    }
+
+    #map1Hover:hover+#map1IMG { display: block; }
+    #map2Hover:hover+#map2IMG { display: block; }
+    #map3Hover:hover+#map3IMG { display: block; }
+    #map4Hover:hover+#map4IMG { display: block; }
+    #map5Hover:hover+#map5IMG { display: block; }
+    #map6Hover:hover+#map6IMG { display: block; }
+    #map7Hover:hover+#map7IMG { display: block; }
+    #map8Hover:hover+#map8IMG { display: block; }
+    #map9Hover:hover+#map9IMG { display: block; }
+    #map10Hover:hover+#map10IMG { display: block; }
+    #map11Hover:hover+#map11IMG { display: block; }
+    #map12Hover:hover+#map12IMG { display: block; }
+    #map13Hover:hover+#map13IMG { display: block; }
+    #map14Hover:hover+#map14IMG { display: block; }
+    #map15Hover:hover+#map15IMG { display: block; }
+    #map16Hover:hover+#map16IMG { display: block; }
+    #map17Hover:hover+#map17IMG { display: block; }
+    #map18Hover:hover+#map18IMG { display: block; }
+    #map19Hover:hover+#map19IMG { display: block; }
+    #map20Hover:hover+#map20IMG { display: block; }
+    #map21Hover:hover+#map21IMG { display: block; }
+    #map22Hover:hover+#map22IMG { display: block; }
+    #map23Hover:hover+#map23IMG { display: block; }
+    #map24Hover:hover+#map24IMG { display: block; }
+  </style>
+</body>
+
+</html>

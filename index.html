@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Statistics</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/theme/main.css">
+    <link rel="stylesheet" type="text/css" href="css/theme/buttons.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/hover-min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header"></div>
+            <center>
+                <form class="form-inline search-bar" action="https://greev.eu/stats/player/" method="get">
+                    <div class="input-group searchbar" style="width: 40%;">
+                        <input type="text" id="searchField" class="form-control" name="u" autocomplete="off" placeholder="Search for a Game or a Player" aria-describedby="inputGroup-sizing-lg" autofocus onkeyup="searchGame()">
+                        <span class="input-group-btn" style="width: 1%;">
+                            <button class="btn btn-default" style="width: unset" type="submit">Search Player</button>
+                        </span>
+                    </div>
+                </form>
+            </center>
+        </div>
+    </nav>
+    <div class="container top-player">
+        <div class="row">
+            <center>
+                <div id="games">
+                    <div class="gameCard" search-name="bw,bedwars">
+                        <a href="stats.html?game=bedwars">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/bedwars.jpg'>
+                                <div class="bottom-left">BedWars</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="gameCard" search-name="sw,skywars">
+                        <a href="stats.html?game=skywars">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/skywars.jpg'>
+                                <div class="bottom-left">SkyWars</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="gameCard" search-name="knockpvp,knockbackpvp">
+                        <a href="stats.html?game=knockpvp">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/knockpvp.jpg'>
+                                <div class="bottom-left">KnockPVP</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="gameCard" search-name="knockffa,knockbackffa">
+                        <a href="stats.html?game=knockffa">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/knockffa.jpg'>
+                                <div class="bottom-left">KnockFFA</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="gameCard" search-name="rush">
+                        <a href="stats.html?game=rush">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/rush.jpg'>
+                                <div class="bottom-left">Rush</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="gameCard" search-name="oneline">
+                        <a href="stats.html?game=oneline">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/oneline.jpg'>
+                                <div class="bottom-left">OneLine</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="gameCard" search-name="quake">
+                        <a href="stats.html?game=quake">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/quake.jpg'>
+                                <div class="bottom-left">Quake</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="gameCard" search-name="1vs1,onevsone,duels">
+                        <a href="stats.html?game=1vs1">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/1vs1.jpg'>
+                                <div class="bottom-left">1vs1</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <!--<div class="gameCard" search-name="mlgrush">
+                        <a href="stats.html?game=mlgrush">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/mlgrush.jpg'>
+                                <div class="bottom-left">MLGRush</div>
+                            </figure>
+                        </a>
+                    </div>-->
+                    <div class="gameCard" search-name="qsg,quicksg,quicksurvivalgames">
+                        <a href="stats.html?game=qsg">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/qsg.jpg'>
+                                <div class="bottom-left">QSG</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="gameCard" search-name="mlgrush,knockwars">
+                        <a href="stats.html?game=mlgrush">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/knockwars.jpg'>
+                                <div class="bottom-left">MLGRush</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="gameCard" search-name="uhc,ultrahardcore">
+                        <a href="stats.html?game=uhc">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/uhc.jpg'>
+                                <div class="bottom-left">UHC</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="gameCard" search-name="sumo">
+                        <a href="stats.html?game=sumo">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/sumo.jpg'>
+                                <div class="bottom-left">Sumo</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="gameCard" search-name="cores">
+                        <a href="stats.html?game=cores">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/cores.jpg'>
+                                <div class="bottom-left">Cores</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="gameCard" search-name="spleef">
+                        <a href="stats.html?game=spleef">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/spleef.jpg'>
+                                <div class="bottom-left">Spleef</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="gameCard" search-name="bowspleef">
+                        <a href="stats.html?game=bowspleef">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/bowspleef.jpg'>
+                                <div class="bottom-left">BowSpleef</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="gameCard" search-name="fastbridge">
+                        <a href="stats.html?game=fastbridge">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/fastbridge.jpg'>
+                                <div class="bottom-left">Fastbridge</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="gameCard" search-name="fastbridge,islands">
+                        <a href="fastbridge_islands.html">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/islands.jpg'>
+                                <div class="bottom-left">Fastbridge Islands</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="gameCard" search-name="fastbridge,inclined">
+                        <a href="stats.html?game=fastbridge_inclined">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/inclined.jpg'>
+                                <div class="bottom-left">Inclined Fastbridge</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="gameCard" search-name="fastbridge,short">
+                        <a href="stats.html?game=fastbridge_short">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/short.jpg'>
+                                <div class="bottom-left">Short Fastbridge</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="gameCard" search-name="fastbridge,short,inclined">
+                        <a href="stats.html?game=fastbridge_inclined_short">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/inclined_short.jpg'>
+                                <div class="bottom-left">Inclined Short</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="gameCard" search-name="fastbridge,staircase">
+                        <a href="stats.html?game=fastbridge_staircase">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/staircase.jpg'>
+                                <div class="bottom-left">Staircase Fastbridge</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="gameCard" search-name="minesweeper,ms">
+                        <a href="minesweeper.html?difficulty=EASY">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/minesweeper.jpg'>
+                                <div class="bottom-left">Minesweeper</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="gameCard" search-name="tntrun">
+                        <a href="stats.html?game=tntrun">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/tntrun.jpg'>
+                                <div class="bottom-left">TNTRun</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="gameCard" search-name="snowballfight">
+                        <a href="stats.html?game=snowballfight">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/snowballfight.jpg'>
+                                <div class="bottom-left">Snowballfight</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="gameCard" search-name="clans">
+                        <a href="./clans/index.html">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/clans.jpg'>
+                                <div class="bottom-left">Clans</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="gameCard" search-name="tokens,coins">
+                        <a href="stats.html?game=tokens">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/tokens.jpg'>
+                                <div class="bottom-left">Tokens</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="gameCard" search-name="loginstreak">
+                        <a href="stats.html?game=loginstreak">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/loginstreak.jpg'>
+                                <div class="bottom-left">Loginstreak</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="gameCard" search-name="pp,playerperformance">
+                        <a href="stats.html?game=performance">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/performance.jpg'>
+                                <div class="bottom-left">Performance</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <hr>
+                    <div class="gameCard" search-name="advent,2019,jumpandrun">
+                        <a href="advent.html?year=2019">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/advent2019.jpg'>
+                                <div class="bottom-left">Advent 2019</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="gameCard" search-name="advent,2020,jumpandrun">
+                        <a href="advent.html?year=2020">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/advent2020.jpg'>
+                                <div class="bottom-left">Advent 2020</div>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="gameCard" search-name="advent,2021,jumpandrun">
+                        <a href="advent.html?year=2021">
+                            <figure>
+                                <img class="mainpage" alt='' src='images/x1/advent2021.jpg'>
+                                <div class="bottom-left">Advent 2021</div>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+                <div class="well well-inside" style="width: 25rem; margin-top: 2em" id="playerCard">
+                    <div class="row" style="margin-top: 0">
+                        <div class="col-md-5">
+                            <img src="https://minotar.net/armor/bust/MrKavatch/100.png" class="img-responsive" id="avatarImg">
+                        </div>
+                        <div class="col-md-7">
+                            <h3 id="playerSearchCardTitle"></h3>
+                            <a id="playerCardLink" href="https://greev.eu/stats/player/?u=">
+                                <button class="btn btn-info" type="submit">
+                                    Open
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="well well-inside" style="width: 25rem; margin-top: 2em" id="clanCard">
+                    <div class="row" style="margin-top: 0">
+                        <h3 id="clanSearchCardTitle"></h3>
+                        <a id="clanCardLink" href="https://greev.eu/stats/clans/info.html?name=">
+                            <button class="btn btn-info" type="submit">
+                                Open
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </center>
+        </div>
+    </div>
+    <center>
+        <p style="color: gray">Impressum & Datenschutz pluoi.com/info</p>
+    </center>
+    <script>
+        function searchGame() {
+            const searchText = document.getElementById("searchField").value;
+            const lowerSearchText = searchText.toLowerCase();
+            document.getElementById('games').childNodes.forEach(node => {
+                if (node.nodeName !== "DIV") {
+                    return;
+                }
+                let gameName = node.getAttribute('search-name');
+                if (gameName.includes(lowerSearchText)) {
+                    node.style.display = "inline-block";
+                } else {
+                    node.style.display = "none";
+                }
+            });
+            if (searchText.match(/\S/)) {
+                if (searchText.length < 3) {
+                    document.getElementById('playerCard').style.display = "none";
+                    document.getElementById('clanCard').style.display = "none";
+                    return;
+                }
+                document.getElementById('playerSearchCardTitle').innerHTML = "Open the Stats of " + searchText;
+                document.getElementById('playerCardLink').href = "https://greev.eu/stats/player/?u=" + searchText;
+                document.getElementById('clanSearchCardTitle').innerHTML = "Open the Clanpage of the " + searchText + " Clan";
+                document.getElementById('clanCardLink').href = "https://greev.eu/stats/clans/info.html?name=" + searchText;
+                document.getElementById('avatarImg').src = "https://minotar.net/armor/bust/" + searchText + "/100.png";
+                document.getElementById('playerCard').style.display = "block";
+                document.getElementById('clanCard').style.display = "block";
+
+                for(let i = 0;i < document.getElementsByTagName("hr").length; i++) {
+                    document.getElementsByTagName("hr")[i].style.display = "none";
+                }
+            } else {
+                for(let i = 0;i < document.getElementsByTagName("hr").length; i++) {
+                    document.getElementsByTagName("hr")[i].style.display = "block";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stats - Greev.eu</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/theme/main.css">
+    <link rel="stylesheet" type="text/css" href="css/theme/buttons.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/mainPage.js"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header"></div>
+        <div class="collapse navbar-collapse" id="navcol">
+            <ul class="nav navbar-nav">
+                <li><a href="javascript:history.back()">⮐ Back</a></li>
+                <li><a href="/stats">Stats</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <form class="form-inline search-bar" action="https://greev.eu/stats/player/" method="get">
+                    <div class="input-group">
+                        <input type="text" name="u" autocomplete="off" class="form-control" placeholder="Search for a Player">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">Search</button>
+                        </span>
+                    </div>
+                </form>
+            </ul>
+        </div>
+        <div class="mobileNav">
+            <table style="width:100%">
+                <tr>
+                    <li><a href="/stats">Stats</a></li>
+                    </th>
+                    <th class="playerTD">
+                        <form class="form-inline search-bar" action="https://greev.eu/stats/player/" method="get">
+                            <div class="input-group">
+                                <input type="text" name="u" autocomplete="off" class="form-control" placeholder="Search for a Player">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">Search</button>
+                                </span>
+                            </div>
+                        </form>
+                    </th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</nav>
+<div class="container top-player">
+    <div class="row">
+        <div class="well text-center" id="titleBar">
+            <h1 id="statsTitle">Loading...</h1>
+        </div>
+        <div id="statsContent">
+            <center>
+                <img src="https://cdn.pluoi.com/greev/stats/loader.svg">
+            </center>
+        </div>
+
+        <center>
+            <button onclick="back()" id="backward" style="display: none">❰ Back
+            </button>
+            <button onclick="next()" id="forward" style="display: none">Next ❱</button>
+        </center>
+        <br>
+
+        <script>
+            let page = 0;
+            let notFoundTimeout;
+            if (findGetParameter("page") != null) {
+                page = findGetParameter("page");
+            }
+            generateFullTable(findGetParameter("game"), page).then((result) => {
+                document.getElementById("statsContent").innerHTML = result;
+                document.getElementById("statsTitle").innerHTML = "Top " + findGetParameter("game").replace("_", " ") + " Players";
+                document.getElementById("backward").style.display = "unset";
+                document.getElementById("forward").style.display = "unset";
+                clearTimeout(notFoundTimeout);
+            });
+
+            notFoundTimeout = setTimeout(function () {
+                document.getElementById("statsTitle").innerHTML = "This page probably does not exist, or the database is currently busy";
+                document.getElementById("titleBar").style.backgroundColor = "#E53935";
+                document.getElementById("titleBar").style.borderBottomColor = "#B71C1C";
+            }, 10000);
+
+            function next() {
+                activateLoader();
+                page++;
+                generateFullTable(findGetParameter("game"), page).then((result) => {
+                    document.getElementById("statsContent").innerHTML = result;
+                });
+                window.scrollTo(0, 0);
+            }
+
+            function back() {
+                activateLoader();
+                if (page === 0) {
+                    return;
+                }
+                page--;
+                generateFullTable(findGetParameter("game"), page).then((result) => {
+                    document.getElementById("statsContent").innerHTML = result;
+                });
+                window.scrollTo(0, 0);
+            }
+
+            function activateLoader() {
+                document.getElementById("statsContent").innerHTML = '<center><img src="https://cdn.pluoi.com/greev/stats/loader.svg"></center>';
+            }
+        </script>
+    </div>
+</div>
+<center>
+    <p style="color: gray">Impressum & Datenschutz pluoi.com/info</p>
+</center>
+</body>
+
+</html>
